@@ -28,7 +28,7 @@ git pull origin master
 //'sequencia de envio de arquivos'
 	git add *
 	git commit -m "comentario"
-	git push origin master		//
+	git push origin main		//
 
 
 //…or create a new repository on the command line//

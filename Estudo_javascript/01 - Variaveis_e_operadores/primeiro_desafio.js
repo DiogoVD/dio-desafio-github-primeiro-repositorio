@@ -13,6 +13,6 @@ let gastoViagemReais;
 let distPercorridaKm = 1500;
 const consumoCarroKm = 10;
 
-gastoViagem = (distPercorridaKm/consumoCarroKm)*precoCombustivelReais;
+gastoViagemReais = (distPercorridaKm/consumoCarroKm)*precoCombustivelReais;
 
-console.log(gastoViagem.toFixed(2));
+console.log(gastoViagemReais.toFixed(2));

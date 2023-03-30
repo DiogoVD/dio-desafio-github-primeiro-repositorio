@@ -1,0 +1,12 @@
+
+// Instala o interpretador do html
+npm install -g http-server
+
+//inicia servidor http
+http-server ./
+
+//Normalize - normaliza os dados em qualquer navegador
+https://cdnjs.com/libraries/normalize
+
+//Google Fonts
+https://fonts.google.com/

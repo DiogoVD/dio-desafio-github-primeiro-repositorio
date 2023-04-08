@@ -59,6 +59,7 @@
     height: 70px;
 }
 
+
 @media only screen and (min-width: 380px) {
     .pokemons {
       grid-template-columns: 1fr 1fr;

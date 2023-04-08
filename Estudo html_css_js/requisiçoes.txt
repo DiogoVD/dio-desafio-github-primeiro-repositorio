@@ -1,0 +1,90 @@
+Requisição http
+
+url: http://pokeapi.co/api/v2/pokemon
+$(endereço)/$(path = caminho de identificação de recurso)
+
+Request Method: GET|POST|PUT|DELETE
+
+url: http://pokeapi.co/api/v2/pokemon?type=grass     (carrega os pokemosntipo grass)
+
+Request Headers (=Configuração da API)
+
+Response Headers (=Configuração da API)
+
+Request body
+
+Body realiza a passagem de paramentros parecido com o post do request method
+Body{
+    "name": "Teste"
+}
+
+
+Retorno do servidor apos requisiçoes(Request)
+
+STATUS CODE: 
+Request Headers
+Request body
+
+--------------------------------------------------------------------------
+
+Requisiçoes com javascript
+
+exemplo:
+
+\\then o codigo a ser executado fica dentro deste bloco.
+fetch(url)
+    .then(function(response){
+        response.json()
+            .then(function(responseBody){
+                console.log(responseBody)
+        })
+    })
+
+\\Catch em caso de erro o codigo dentro do catch é executado
+    .catch(function(error){
+        console.error(error)
+    })
+
+\\finally sempre é executado no fim da execução do codigo mesmo se ocorrer erro.
+    .finally(function(){
+        console.log('Requisição concluida')
+    })
+
+\\ o codigo acima pode ser transcrito usando o aeron(=>) para evitar o callback de thens provocando um loop infinito de chamadas é usado o modo conforme abaixo:
+
+fetch(url)
+    .then((response)=>{
+        return response.json()
+        })
+    .then((responseBody)=>{
+        console.log(responseBody)
+    })
+
+\\bloco catch
+    .catch((error)=>{
+        console.error(error)
+    })
+
+\\bloco finally nao necessariamente precisa ser utilizado no desenvolvimento do codigo.
+    .finally(function(){
+        console.log('Requisição concluida')
+    })
+
+
+\\O codigo acima ainda pode ser transcrito para a seguinte forma reduzindo drasticamente o quantitativo de codigo
+
+fetch(url)
+    .then((response) => response.json())    \\response.json() é a resposta convertida em javascript.
+    .then((responseBody) => console.log(responseBody))
+
+\\bloco catch
+    .catch((error) => console.error(error))
+
+
+-----------------------------------------------------------------------
+\\ codigo final 
+fetch(url)
+    .then((response) => response.json())
+    .then((responseBody) => console.log(responseBody))
+    .catch((error) => console.error(error))
+-----------------------------------------------------------------------

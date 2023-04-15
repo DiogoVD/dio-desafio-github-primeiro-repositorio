@@ -10,3 +10,9 @@ https://cdnjs.com/libraries/normalize
 
 //Google Fonts
 https://fonts.google.com/
+
+--------------------------------------------------------------------
+
+Atalhos 
+
+Modo mais rápido e fácil (tem os botões no painel superior): Selecione as linhas -> Para comentar: Ctrl + K , Ctrl + C. Selecione as linhas -> Para remover comentário: Ctrl + K , Ctrl + U.

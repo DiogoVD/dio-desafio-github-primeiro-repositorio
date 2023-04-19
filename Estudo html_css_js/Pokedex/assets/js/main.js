@@ -4,16 +4,18 @@
 // }
 
 const pokemonList = document.getElementById('pokemonList');
-const loadMoreButton = document.getElementById('loadMoreButton');
+//const loadMoreButton = document.getElementById('loadMoreButton');
 const limit = 12;
 let offset = 0;
 const maxRecord = 151; //limite de pokemons da 1geração
 let limitMax;
 
 
+
 function convertPokemonToLi(pokemon){
 
     return `
+        <button id="detalhePokemon" class="buttonPoke" onclick="chamapoke(${pokemon.number})">
         <li class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
@@ -27,15 +29,16 @@ function convertPokemonToLi(pokemon){
                     alt="${pokemon.name}">
             </div>
         </li>
+        </button>
     `
 }
 
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemon(offset, limit).then((pokemons = []) => {
-    
-        //O codigo abaixo realiza a conversao da lista de pokemons em uma lista html usando a função map que transforma uma função em outra.
-        pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('')
-
+        if(pokemonList != null){
+            //O codigo abaixo realiza a conversao da lista de pokemons em uma lista html usando a função map que transforma uma função em outra.
+            pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('')
+        }
         //----------------------------------------------------------------------------------------------------------
         // O codigo acima é uma melhoria da codificação abaixo
 
@@ -62,12 +65,12 @@ function loadPokemonItens(offset, limit) {
         // }
         
     })
-    .catch((error) => console.error(error))
 }
 
 loadPokemonItens(offset, limit)
 
-loadMoreButton.addEventListener ("click", () => {
+
+function loadMoreButton() {
     offset += limit
     const pokePagination = offset + limit
 
@@ -80,6 +83,24 @@ loadMoreButton.addEventListener ("click", () => {
         loadMoreButton.parentElement.removeChild(loadMoreButton);
 
     }
+}
+
+// loadMoreButton.addEventListener ("click", () => {
+//     offset += limit
+//     const pokePagination = offset + limit
+
+//     if(pokePagination < maxRecord){
+//         loadPokemonItens(offset, limit);
+
+//     }else{
+//         limitMax = maxRecord - offset;
+//         loadPokemonItens(offset, limitMax)
+//         loadMoreButton.parentElement.removeChild(loadMoreButton);
+
+//     }
+    
+// })
+
+
 
     
-})

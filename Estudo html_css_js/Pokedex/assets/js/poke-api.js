@@ -19,22 +19,22 @@ function convertPokeApiDetailToPokemon(pokeDetail){
 }
 
 
-pokeApi.getPokemonDetail = (pokemon) => {
-    return fetch(pokemon.url)
-        .then((response) => response.json())
-        .then(convertPokeApiDetailToPokemon)
+pokeApi.getPokemonDetail = async (pokemon) => {
+    const response = await fetch(pokemon.url)
+    const pokeDetail = await response.json()
+    return convertPokeApiDetailToPokemon(pokeDetail)
 }
 
-pokeApi.getPokemon = (offset = 0, limit = 12) => {
+pokeApi.getPokemon = async (offset = 0, limit = 12) => {
     
     const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 
-    return fetch(url)
-        .then((response) => response.json())
-        .then((jsonBody) => jsonBody.results)
-        .then((pokemons) => pokemons.map(pokeApi.getPokemonDetail))
-        .then((detailRequests) => Promise.all(detailRequests))
-        then((pokemonDetails) => pokemonDetails)
+    const response = await fetch(url)
+    const jsonBody = await response.json()
+    const pokemons = jsonBody.results
+    const detailRequests = pokemons.map(pokeApi.getPokemonDetail)
+    return await Promise.all(detailRequests)
+        .then((pokemonDetails) => pokemonDetails)
 
         .catch((error) => console.error(error))
 }

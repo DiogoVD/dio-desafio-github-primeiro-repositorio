@@ -62,6 +62,10 @@
     background-color: #f9aec7;
 }
 
+.button{
+    border: none;
+}
+
 
 .pokemon {
     display: flex;
@@ -114,11 +118,6 @@
     max-width: 100px;
     transform: scaleX(-1);
     height: 70px;
-}
-
-.buttonPoke {
-    border: none;
-    text-align: left;
 }
 
 .pagination {

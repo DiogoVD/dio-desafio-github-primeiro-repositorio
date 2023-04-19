@@ -1,0 +1,74 @@
+
+
+.dpokemon{
+    list-style: none;
+    
+    border-radius: 2rem;
+    padding-left: 0rem;
+    
+}
+
+.dpokemon .detail {
+    padding-left: 20px;
+}
+
+.dpokemon .backButton{
+    
+    border-radius: 1rem;
+    color: white;
+    margin: 3rem 1rem ;
+    border: none;
+    font-size: 2rem;
+}
+
+.dpokemon .detail .name{
+    color: #fff;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+}
+
+.dpokemon .detailNum .number{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    color: white;
+    opacity: 0.8;
+    font-size: 2rem;
+    padding-right: 2rem;
+}
+
+.dpokemon .detail .types{
+    padding-left: 0px;
+
+}
+
+.dpokemon .detail .types .type{
+    color: #fff;
+    padding: .25rem 1rem;
+    margin: .25rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    filter: brightness(1.1);
+    text-align: center;
+}
+
+.dpokemon .image {
+    margin: 2rem 2rem;
+    text-align: center;
+    transform: scaleX(-1);
+    
+}
+.dpokemon .image .img{
+    height: 15rem;
+    max-height: 100%;
+}
+
+.dpokemon .descritivoPokemon {
+    padding-top: 3rem;
+    background-color: white;
+    border-radius: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+

@@ -16,3 +16,10 @@ https://fonts.google.com/
 Atalhos 
 
 Modo mais rápido e fácil (tem os botões no painel superior): Selecione as linhas -> Para comentar: Ctrl + K , Ctrl + C. Selecione as linhas -> Para remover comentário: Ctrl + K , Ctrl + U.
+
+//Junta as branchs na main localmente
+git checkout main
+git merge NOME_DA_BRANCH
+
+//sobe o merge para o git
+git push --set-upstream origin <branch name>

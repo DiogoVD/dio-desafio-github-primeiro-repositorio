@@ -14,9 +14,6 @@
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.74);
 }
 
-.card_left .card_right{
-
-}
 
 .card_left{
     display: flex;
@@ -39,8 +36,4 @@
 
 .card_left > p{
     color: gray;
-}
-
-.card_right{
-
 }

@@ -11,20 +11,21 @@
 </head>
 <body>
     <div class="container">
-        <div class="card">
-            <div class="card_left">
-                <span>By Diogo Vieira</span>
-                <a href="#">Darth Vader contrada desenvolvedores</a>
-                <p>Darth Vader procura desenvolvedores front-end que gostam de usar web componentes.</p>
-            </div>
-            <div class="card_right">
-                <img src="assets/darth_vader.jpeg" alt="foto_card">
-            </div>
-        </div>
+        <card-news
+            autor="Diogo";
+            titulo="Dart Vader contrata desenvolvedores";
+            conteudo="Darth Vader procura desenvolvedores front-end que gostam de usar web componentes.";
+            imagem-url="assets/darth_vader.jpeg";
+            image-alt="photo1";
+
+        ></card-news>
+        <card-news
+            titulo="Avida dos desenvolvedores";
+            conteudo="O uso de componentes facilita muito a vida dos devs.";
+            
+        ></card-news>
+
     </div>
-    <card-news></card-news>
-    <titulo-dinamico titulo="Titulo 1"></titulo-dinamico>
-    <titulo-dinamico titulo="Titulo 2"></titulo-dinamico>
-    <titulo-dinamico titulo="Titulo 3"></titulo-dinamico>
+    
 </body>
 </html>

@@ -163,3 +163,53 @@ class Pessoa implements robot2 {
 const p = new Pessoa(1, "Diogo");
 console.log(p.sayHello());
 
+//-----------------------------------------------------------------------------------------------------------------------
+
+// Classes
+
+class Character {
+    name?: string;
+    stretch: number;
+    skill: number;
+
+    constructor(name: string, stretch: number, skill: number){
+        this.name = name;
+        this.stretch = stretch;
+        this.skill = skill;
+    }
+
+    attack(): void {
+        console.log(`Attack with ${this.stretch} points`);
+    }
+}
+
+const p1 = new Character("Ryu", 10, 98);
+p1.attack();
+
+// Data modifier
+// private - apenas a classe pode acessar a variavel.
+// public - é o acesso default, permite cer acessado por qualquer parte fora da classe
+// protected - alem da classe suas subclasses conseguem enxergar.
+// readonly - variavel é somente leitura
+// ? - variavel com este simbolo é opcional.
+
+// Data modifier tbm se aplica a metodos
+
+// SubClasses
+
+// Character - superclass
+// Magician - subclasse de Character
+class Magician extends Character{
+    magicPoints: number;
+    constructor(
+        name: string, 
+        stretch: number, 
+        skill: number, 
+        magicPoints: number
+    ){
+        super(name, stretch, skill);
+        this.magicPoints = magicPoints;
+    }
+}
+
+const p2 = new Magician("Mago", 9, 30, 100);

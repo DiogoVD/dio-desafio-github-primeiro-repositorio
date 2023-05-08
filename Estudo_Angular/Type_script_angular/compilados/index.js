@@ -82,3 +82,22 @@ class Pessoa {
 }
 const p = new Pessoa(1, "Diogo");
 console.log(p.sayHello());
+class Character {
+    constructor(name, stretch, skill) {
+        this.name = name;
+        this.stretch = stretch;
+        this.skill = skill;
+    }
+    attack() {
+        console.log(`Attack with ${this.stretch} points`);
+    }
+}
+const p1 = new Character("Ryu", 10, 98);
+p1.attack();
+class Magician extends Character {
+    constructor(name, stretch, skill, magicPoints) {
+        super(name, stretch, skill);
+        this.magicPoints = magicPoints;
+    }
+}
+const p2 = new Magician("Mago", 9, 30, 100);

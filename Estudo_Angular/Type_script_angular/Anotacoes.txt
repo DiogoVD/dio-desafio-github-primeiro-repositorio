@@ -1,0 +1,14 @@
+// comando para instalar typescript localmente no projeto
+// npm install typescript -D        instala apenas em modo desenvolvedor
+// npm install typescript -G        instala globalmente
+
+// consultar site https://www.typescriptlang.org/download em caso de duvidas
+
+// comando para rodar TYPESCRIPT
+// npx tsc caminho do arquivo 
+// exemplo: npx tsc src\index.ts
+
+// para abrir o arquivo de configuraçoes do typescript usar o comando:
+// npx tsc --init
+
+// as configuraçoes editaves estao no arquivo tsconfig.json

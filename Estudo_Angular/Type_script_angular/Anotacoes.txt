@@ -12,3 +12,6 @@
 // npx tsc --init
 
 // as configuraçoes editaves estao no arquivo tsconfig.json
+
+// no arquivo package.json foi adicionado o script de execução: "start": "npx tsc && node compilados/index.js", para rodar o script basta executar: npm rum start
+//npm run nome_do_script

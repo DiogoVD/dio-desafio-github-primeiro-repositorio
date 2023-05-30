@@ -8,6 +8,9 @@
 // npx tsc caminho do arquivo 
 // exemplo: npx tsc src\index.ts
 
+//Link do projeto base
+// https://github.com/felipeAguiarCode/angular-playground/tree/main/C2%20-%20Typescript%20para%20Angular
+
 
 type heroi = {
     name: string;
@@ -213,3 +216,68 @@ class Magician extends Character{
 }
 
 const p2 = new Magician("Mago", 9, 30, 100);
+
+//------------------------------------------------------------------------------------------------------
+
+//Generics
+
+function concatArray<T>(...itens: T[]): T[]{
+    return new Array().concat(...itens);
+}
+
+// o spretch é representado por tres pontos(...) realiza a conbinação de n arrays.
+const numArray = concatArray<number[]>([1, 3], [7]);
+const stgArray = concatArray<string[]>(["Diogo", "Diego"], ["rambo"]);
+
+//numArray.push("saitama");
+
+console.log(numArray);
+console.log(stgArray);
+
+//--------------------------------------------------------------------------------------------
+
+//Decorator 
+
+//class decorator
+function apiVersion(version: string){
+    return (target: any) => {
+        Object.assign(target.prototype, {__version: version, __name: "Diogo"
+        });
+    };
+}
+
+//atribute decorator
+function minLength(length: number){
+    return (target: any, key: string) => {
+        let _value = target[key];
+
+        const getter = () => "[play]" + _value;
+        const setter = (value: string) => {
+
+            if (value.length < length) {
+                throw new Error(`Tamanho menor do que ${length}`);
+            }else{
+                _value = value;
+            }
+        };
+
+        Object.defineProperty(target, key, {
+            get: getter,
+            set: setter,
+        });
+    };
+}
+
+class Api {
+
+    @minLength(3)
+
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+const api = new Api("nomeproj");
+console.log(api.name);

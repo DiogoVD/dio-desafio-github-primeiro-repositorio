@@ -101,3 +101,10 @@ class Magician extends Character {
     }
 }
 const p2 = new Magician("Mago", 9, 30, 100);
+function concatArray(...itens) {
+    return new Array().concat(...itens);
+}
+const numArray = concatArray([1, 3], [7]);
+const stgArray = concatArray(["Diogo", "Diego"], ["rambo"]);
+console.log(numArray);
+console.log(stgArray);

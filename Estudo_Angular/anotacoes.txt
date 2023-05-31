@@ -1,0 +1,12 @@
+comandos angular
+
+cd life-cycle        //
+code .              // abre uma nova janela apenas com o projeto angular
+
+ng new life-cycle  // Cria um workspace de um projeto angular na pasta definida.
+
+ng serve           //Roda um servidor local para ver sua aplicação
+Ctrl + C            // para o servidor
+
+ng generate component title   // cria um componente com o nome definido "title"
+ng g c title        // comando acima abreviado

@@ -1,0 +1,8 @@
+.container__small-card{
+  border: 1px solid;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+

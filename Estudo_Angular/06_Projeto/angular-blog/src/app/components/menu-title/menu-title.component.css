@@ -10,3 +10,6 @@
   font-family: 'Segoe UI';
 }
 
+.container_menu_title > hr{
+  opacity: 30%;
+}

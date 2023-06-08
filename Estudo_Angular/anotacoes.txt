@@ -1,12 +1,74 @@
 comandos angular
 
-cd life-cycle        //
+cd nomepastaprojeto  //
 code .              // abre uma nova janela apenas com o projeto angular
 
-ng new life-cycle  // Cria um workspace de um projeto angular na pasta definida.
+ng new nomepasta  // Cria um workspace de um projeto angular na pasta definida.
 
 ng serve           //Roda um servidor local para ver sua aplicação
 Ctrl + C            // para o servidor
 
 ng generate component title   // cria um componente com o nome definido "title"
 ng g c title        // comando acima abreviado
+
+****************************** diretivas ********************************
+
+* ngIf   //Oculta componente ou elemento
+ng-Template     // é um bloco oculto que é usado em conjunto com ngIf,
+
+*ngIf ="isAliveNomeDoComponente"; else nome_do_bloco       //se isAlive for verdadeiro exibe o componente associado se falso exibe o bloco definido apos o else.
+
+-------------------------------------------------------------------------
+
+*ngFor = "let a of array" // realiza um for dos itens do array criando uma lista de itens, ex:
+<ul>
+  <li *ngFor="let p of produtos">{{p}}</li>
+</ul>
+
+//tambem é possivel usar o ngFor junto com index exemplo:
+<ul>
+  <li *ngFor="let p of produtos; let i = index"
+    (click) = "remover(i)"
+  >{{i}} - {{p}}</li>
+  <button (click)="adicionar()">Adicionar</button>
+  <button (click)="deletar()">Remover</button>
+</ul>
+
+e suas funçoes:
+  adicionar(){
+    this.produtos.push("Diogo");        //adiciona o item
+  }
+  deletar(){                            // remove o ultimo item do array
+    this.produtos.pop();
+  }
+  remover(index:number){
+    this.produtos.splice(index,1);      // remove o item clicado
+  }
+-------------------------------------------------------------------------
+
+*ngSwitchCase = "variavel"      //igual ao switch case. exemplo
+
+<div [ngSwitch]="menuType">
+  <div *ngSwitchDefault>
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+
+    </ul>
+  </div>
+  <div *ngSwitchCase="'admin'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuarios</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'superuser'">
+    <ul>
+      <li>editar perfil</li>
+      <li>adicionar cartão</li>
+      <li>gerenciar usuarios</li>
+      <li>gerenciar admins</li>
+    </ul>
+  </div>
+</div>

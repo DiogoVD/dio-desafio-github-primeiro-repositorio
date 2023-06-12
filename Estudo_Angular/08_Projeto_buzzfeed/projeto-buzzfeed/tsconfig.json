@@ -6,7 +6,7 @@
     "outDir": "./dist/out-tsc",
 
     "resolveJsonModule": true,
-    "allowArbitraryExtensions": true,
+    "allowSyntheticDefaultImports": true,
 
     "forceConsistentCasingInFileNames": true,
     "strict": true,

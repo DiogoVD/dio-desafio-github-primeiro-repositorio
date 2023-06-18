@@ -1,6 +1,6 @@
 comandos angular
 
-npm install -g @angular VERSAO DESEJADA   //instalando angular no vscode
+npm install -g @angularVERSAO_DESEJADA/cli   //instalando angular no vscode
 
 cd nomepastaprojeto  //
 code .              // abre uma nova janela apenas com o projeto angular
